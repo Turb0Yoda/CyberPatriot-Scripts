@@ -21,29 +21,11 @@
 		clear
 			echo "Clearing Unwanted Programs"	
 			#Remove Torrenting programs
-		sudo apt-get purge qbittorrent 
-		sudo apt-get purge utorrent 
-		sudo apt-get purge ctorrent 
-		sudo apt-get purge ktorrent 
-		sudo apt-get purge rtorrent 
-		sudo apt-get purge deluge 
-		sudo apt-get purge transmission-gtk
-		sudo apt-get purge transmission-common 
-		sudo apt-get purge tixati 
-		sudo apt-get purge frostwise 
-		sudo apt-get purge vuze 
-		sudo apt-get purge irssi
-		sudo apt-get purge talk 
-		sudo apt-get purge telnet
+		sudo apt-get purge qbittorrent utorrent ctorrent ktorrent rtorrent deluge transmission-gtk transmission-common tixati frostwise vuze irssi talk telnet
+
 			#Remove pentesting
-		sudo apt-get purge wireshark 
-		sudo apt-get purge nmap 
-		sudo apt-get purge john 
-		sudo apt-get purge netcat 
-		sudo apt-get purge netcat-openbsd 
-		sudo apt-get purge netcat-traditional 
-		sudo apt-get purge netcat-ubuntu 
-		sudo apt-get purge netcat-minimal
+		sudo apt-get purge wireshark nmap john netcat netcat-openbsd netcat-traditional netcat-ubuntu netcat-minimal
+
 			#cleanup	 
 		sudo apt-get autoremove
 
@@ -54,17 +36,7 @@
             #install Needed programs
 		clear
 			echo "Installing anti-virus, anti-malware, firewall, and utilities"
-   		sudo apt-get install chkrootkit 
-   		sudo apt-get install ufw 
-   		sudo apt-get install clamav 
-   		sudo apt-get install rkhunter 
-   		sudo apt-get install selinux 
-   		sudo apt-get install tree
-   		sudo apt-get install auditd 
-   		sudo apt-get install bum 
-   		sudo apt-get install htop
-		sudo apt-get install libpam-cracklib
-		sudo apt-get install symlinks
+   		sudo apt-get install chkrootkit ufw clamav rkhunter selinux tree auditd bum htop libpam-cracklib symlinks
 		clear
 
 ;;
@@ -125,9 +97,9 @@
 		clear
 			echo "Scanning Now"
 			#run anti virus/malware/rootkit/etc
-    	sudo chkrootkit
-    	sudo freshclam
-    	sudo clamscan -r /
+    		sudo chkrootkit
+    		sudo freshclam
+    		sudo clamscan -r /
 
 ;;
 
@@ -138,21 +110,21 @@
 			#This writes the locations ox these file types into a text file located in the home directory.			
 		find / -name '*.mp3' -type f >>/home/list.txt
 		find / -name '*.mov' -type f >>/home/list.txt
-    	find / -name '*.mp4' -type f >>/home/list.txt
+    		find / -name '*.mp4' -type f >>/home/list.txt
 		find / -name '*.mkv' -type f >>/home/list.txt
 		find / -name '*.avi' -type f >>/home/list.txt
-    	find / -name '*.mpg' -type f >>/home/list.txtt
-    	find / -name '*.mpeg' -type f >>/home/list.txt
+    		find / -name '*.mpg' -type f >>/home/list.txtt
+    		find / -name '*.mpeg' -type f >>/home/list.txt
 		find / -name '*.flac' -type f >>/home/list.txt
 		find / -name '*.alac' -type f >>/home/list.txt
 		find / -name '*.m4a' -type f  >>/home/list.txt
-    	find / -name '*.flv' -type f >>/home/list.txt
-    	find / -name '*.ogg' -type f >>/home/list.txt
+    		find / -name '*.flv' -type f >>/home/list.txt
+    		find / -name '*.ogg' -type f >>/home/list.txt
 		find / -name '*.wmv' -type f >>/home/list.txt
 		find /home -name '*.gif' -type f >>/home/list.txt
 		find /home -name '*.png' -type f >>/home/list.txt
-    	find /home -name '*.jpg' -type f >>/home/list.txt
-    	find /home -name '*.jpeg' -type f >>/home/list.txt
+    		find /home -name '*.jpg' -type f >>/home/list.txt
+    		find /home -name '*.jpeg' -type f >>/home/list.txt
 		find /home -name '*.bmp' -type f >>/home/list.txt
 		find /home -name '*.bat' -type f >>/home/list.txt
 		find /home -name '*.txt' -type f >>/home/list.txt
@@ -206,17 +178,17 @@
 
 			#check for malicious sources that may come up when running apt-get
 			#ie sync to download... metasploit
-    	sudo nano /etc/apt/sources.list
+    		sudo nano /etc/apt/sources.list
 
 			#make sure if safe, use 8.8.8.8 for name server
-    	sudo nano /etc/resolv.conf 		
+    		sudo nano /etc/resolv.conf 		
 
 			#make sure nothing is redirecting
-    	sudo nano /etc/hosts 
+    		sudo nano /etc/hosts 
 
 			#should be empty except for 'exit 0'
 			#autorun script
-    	sudo nano /etc/rc.local
+    		sudo nano /etc/rc.local
 
 			#sysctl.conf
 		sysctl -w net.ipv4.ip_forward=0
@@ -240,14 +212,14 @@
 		sysctl -w net.ipv6.conf.default.accept_ra=0
 		sysctl -w net.ipv6.conf.all.accept_redirects=0 
 		sysctl -w net.ipv6.conf.default.accept_redirects=0
-    	sysctl -p	
+    		sysctl -p	
 
     		#lightdm
 			echo allow-guest=false >> /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf
     		echo autologin-user= >> /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf
     		#debug
-    	sudo nano /etc/lightdm/lightdm.conf
-    	sudo nano /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf		
+    		sudo nano /etc/lightdm/lightdm.conf
+    		sudo nano /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf		
 
 			#password expiration
 		sed -i -e 's/PASS_MAX_DAYS\t[[:digit:]]\+/PASS_MAX_DAYS\t14/' /etc/login.defs
