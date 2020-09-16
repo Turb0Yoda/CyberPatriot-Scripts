@@ -108,32 +108,8 @@
 		clear
 			echo "Find User Files"
 			#This writes the locations ox these file types into a text file located in the home directory.			
-		find / -name '*.mp3' -type f >>/home/list.txt
-		find / -name '*.mov' -type f >>/home/list.txt
-    		find / -name '*.mp4' -type f >>/home/list.txt
-		find / -name '*.mkv' -type f >>/home/list.txt
-		find / -name '*.avi' -type f >>/home/list.txt
-    		find / -name '*.mpg' -type f >>/home/list.txtt
-    		find / -name '*.mpeg' -type f >>/home/list.txt
-		find / -name '*.flac' -type f >>/home/list.txt
-		find / -name '*.alac' -type f >>/home/list.txt
-		find / -name '*.m4a' -type f  >>/home/list.txt
-    		find / -name '*.flv' -type f >>/home/list.txt
-    		find / -name '*.ogg' -type f >>/home/list.txt
-		find / -name '*.wmv' -type f >>/home/list.txt
-		find /home -name '*.gif' -type f >>/home/list.txt
-		find /home -name '*.png' -type f >>/home/list.txt
-    		find /home -name '*.jpg' -type f >>/home/list.txt
-    		find /home -name '*.jpeg' -type f >>/home/list.txt
-		find /home -name '*.bmp' -type f >>/home/list.txt
-		find /home -name '*.bat' -type f >>/home/list.txt
-		find /home -name '*.txt' -type f >>/home/list.txt
-		find /home -name '*.pdf' -type f >>/home/list.txt
-		find /home -name '*.doc' -type f >>/home/list.txt
-		find /home -name '*.docx' -type f >>/home/list.txt
-		find /home -name '*.xml' -type f >>/home/list.txt
-		find /home -name '*.odt' -type f >>/home/list.txt
-		find /home -name '*.torrent' -type f >>/home/list.txt
+
+    		find / -type f \( -name "*.mp3" -o -name "*.mov" -o -name "*.mp4" -o -name "*.mkv" -o -name "*.avi" -o -name "*.mpg" -o -name "*.mpeg" -o -name "*.flac" -o -name "*.alac" -o -name "*.m4a" -o -name "*.flv" -o -name "*.ogg" -o -name "*.wmv" -o -name "*.gif" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.bmp" -o -name "*.bat" -o -name "*.txt" -o -name "*.pdf" -o -name "*.doc" -o -name "*.docx" -o -name "*.xml" -o -name "*.odt" -o -name "*.torrent" -o \)  >>/home/list.txt
 
 ;;
 
